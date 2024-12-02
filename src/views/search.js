@@ -1,19 +1,23 @@
-import { html, nothing } from '../../node_modules/lit-html/lit-html.js';
+import { html } from '../../node_modules/lit-html/lit-html.js';
 import * as service from '../api/data.js';
 
 const cardTemplate = (fruit) => html`
-	<div class="fruit">
-		<img src=${fruit.imageUrl} alt="example1" />
-		<h3 class="title">${fruit.name}</h3>
-		<p class="description">${fruit.description}</p>
-		<a class="details-btn" href="/details/${fruit._id}">More Info</a>
+	<div class="fruit-card">
+		<img src=${fruit.imageUrl} alt="${fruit.name}" class="fruit-image" />
+		<div class="fruit-info">
+			<h3 class="fruit-title">${fruit.name}</h3>
+			<p class="fruit-description">${fruit.description}</p>
+			<a class="details-btn" href="/details/${fruit._id}">More Info</a>
+		</div>
 	</div>
 `;
+
+
 const searchTemplate = (fruits, onSubmit) => html`
 	<section id="search">
 		<div class="form">
 			<h2>Search</h2>
-			<form class="search-form">
+			<form class="search-form" @submit=${onSubmit}>
 				<input type="text" name="search" id="search-input" />
 				<button class="button-list">Search</button>
 			</form>
@@ -44,3 +48,4 @@ export async function searchPage(ctx) {
 		ctx.render(searchTemplate(fruits, onSubmit));
 	}
 }
+
