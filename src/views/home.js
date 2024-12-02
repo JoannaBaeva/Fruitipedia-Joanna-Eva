@@ -4,7 +4,7 @@ const homeTemplate = () => html`
 	<section id="home">
 		<h1>Learn more about your favorite fruits</h1>
 		<img
-			src=""
+			src="images/bg.png"
 			alt="home"
 		/>
 	</section>

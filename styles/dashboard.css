@@ -51,3 +51,86 @@
   font-family: 'Roboto', sans-serif;
 }
 
+
+/* General layout */
+#dashboard {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 40px 20px;
+  justify-items: center;
+}
+
+/* Fruit card styling */
+.fruit {
+  background-color: #ffffff;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: auto;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+}
+
+.fruit:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Fruit image */
+.fruit img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+/* Title and description */
+.title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #333;
+  margin: 55px;
+}
+
+.description {
+  color: #777;
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  padding: 0 10px;
+  flex-grow: 1;
+}
+
+/* Button styling */
+.details-btn {
+  background-color:rgb(240, 156, 47);
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 550;
+  padding: 12px 20px;
+  text-decoration: none;
+  border-radius: 10px;
+  border: 2px solid transparent;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  margin: 15px;
+}
+
+.details-btn:hover {
+  background-color: rgb(240, 124, 47);
+  border-color: black;
+}
+
+/* No fruit message */
+#dashboard h2 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #aaa;
+}
