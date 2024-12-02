@@ -34,7 +34,7 @@ export async function detailsPage(ctx) {
         const choice = confirm('Are you sure you want to delete this fruit?');
         if (choice) {
             await service.deleteById(id);
-            ctx.page.redirect('/');
+            ctx.page.redirect('/catalog');
         }
     }
 }

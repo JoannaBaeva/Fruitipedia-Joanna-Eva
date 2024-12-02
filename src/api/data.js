@@ -18,21 +18,7 @@ export async function create(data) {
 }
 
 export async function getById(id) {
-	const response = await fetch(`/api/fruits/${id}`);
-    if (!response.ok) {
-        throw new Error('Failed to fetch fruit');
-    }
-    return await response.json();
-}
-
-export async function deleteById(id) {
-    const response = await fetch(`/api/fruits/${id}`, {
-        method: 'DELETE',
-    });
-    if (!response.ok) {
-        throw new Error('Failed to delete fruit');
-    }
-    return await response.json();
+	return api.get(endpoints.getById + id);
 }
 
 export async function deleteById(id) {
